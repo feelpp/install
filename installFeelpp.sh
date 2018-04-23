@@ -26,8 +26,13 @@ docker run  -it -d --name ${containerName} --user=${user}:$(id -g)  -h "feelpp" 
     --workdir="${home}"                                     \
     --volume="${home}:${home}"                              \
     --volume="${home}/feel:/feel"                           \
+    --volume="/etc/group:/etc/group:ro"                     \
+    --volume="/etc/passwd:/etc/passwd:ro"                   \
+    --volume="/etc/shadow:/etc/shadow:ro"                   \
+    --volume="/etc/sudoers.d:/etc/sudoers.d:ro"             \
     -v=/tmp/.X11-unix:/tmp/.X11-unix ${imageName}          \
-     /usr/sbin/gosu /bin/bash
+    /bin/bash --rcfile /usr/local/etc/bashrc.feelpp
+
 
 #--volume="/private/etc/shadow:/etc/shadow:ro"                   \
 
