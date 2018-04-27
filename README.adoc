@@ -2,3 +2,11 @@
 :feelpp: Feel++
 
 This repository provides scripts that facilites the installation of {feelpp} on Linux
+
+ - run as --user=`$(id -u)` systematically
+ - mount `$home/feel` to `$home` in docker 
+ - if necessary, install feel++ scripts to install, start and stop feel++ containers
+ - default container is `feelpp/feelpp-toolboxes`
+ - to install feel++ container do `sh installFeelpp`: it starts a container and call it after the latest release by default 
+ - to start using feel++ do `sh startFeelpp` : it exec the default feel++ container
+ - to stop using feel++ do `sh stopFeelpp` : it stops and rm the default feel++ container
