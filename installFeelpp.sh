@@ -1,10 +1,12 @@
 username="$USER"
 user="$(id -u)"
 home="${1:-$HOME}"
+version="${2:-105}"
 
 imageName=${2:-"feelpp/feelpp-toolboxes"}
-containerName="feelpp-v104"
+containerName="feelpp-v$version"
 displayVar="$DISPLAY"
+FEELPP_GITHUB_TOKEN="$FEELPP_GITHUB_TOKEN" 
 
 # List container name :
 echo "*******************************************************"
